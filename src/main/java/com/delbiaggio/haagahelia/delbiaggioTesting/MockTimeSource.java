@@ -1,6 +1,6 @@
 package com.delbiaggio.haagahelia.delbiaggioTesting;
 /**
- * @author Nicolas Delbiaggio
+ * @author NicolasDelbiaggio
  * @version 18.10.2016
  *
  */
