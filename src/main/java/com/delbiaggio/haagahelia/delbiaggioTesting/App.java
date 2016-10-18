@@ -1,7 +1,8 @@
 package com.delbiaggio.haagahelia.delbiaggioTesting;
 
 /**
- * Hello world!
+ * @author Nicolas Delbiaggio
+ * @version 18.10.2016
  *
  */
 public class App 
