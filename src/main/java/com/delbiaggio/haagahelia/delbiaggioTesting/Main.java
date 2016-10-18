@@ -31,7 +31,7 @@ public class Main extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String html = "<meta http-equiv= \"refresh\" content= \"4\" />";
+		String html = "<meta http-equiv= \"refresh\" content= \"5\" />";
 	    out.write(html);
 	    
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -41,12 +41,15 @@ public class Main extends HttpServlet {
 	
 	private ArrayList<Watch> getWatches(){
 	    ArrayList<Watch> lstWatches = new ArrayList<Watch>();
-	    TimeSource timeSys = new SystemTimeSource();
-	    Watch w1 = new FinnishWatch(timeSys);
-	    lstWatches.add(w1);
-	    TimeSource timeInt = new InternetTimeSource();
-	    Watch w2 = new FinnishWatch(timeInt);
-	    lstWatches.add(w2);
+	    TimeSource time = new SystemTimeSource();
+	    Watch w = new FinnishWatch(time);
+	    lstWatches.add(w);
+	    time = new InternetTimeSource();
+	    w = new FinnishWatch(time);
+	    lstWatches.add(w);
+	    time = new MockTimeSource();
+	    w = new FinnishWatch(time);
+	    lstWatches.add(w);
 	    return lstWatches;
 	}
 	

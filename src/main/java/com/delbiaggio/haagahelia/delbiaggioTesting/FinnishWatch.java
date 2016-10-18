@@ -13,7 +13,7 @@ public class FinnishWatch implements Watch{
 	private TimeSource source;
 	private SimpleDateFormat timeFormatter = new SimpleDateFormat("H:m:s");
 	private SimpleDateFormat dateFormatter = new SimpleDateFormat("d.M.Y");
-	private TimeZone easternEuropeanTime ;
+	private TimeZone easternEuropeanTime;
 	
 	public FinnishWatch(TimeSource source){
 		this.source = source;

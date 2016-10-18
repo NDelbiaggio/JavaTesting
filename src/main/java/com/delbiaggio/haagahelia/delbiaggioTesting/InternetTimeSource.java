@@ -12,6 +12,7 @@ import org.apache.commons.net.ntp.TimeInfo;
 public class InternetTimeSource implements TimeSource {
 
 	//private String TIME_SERVER = "time-a.nist.gov";
+	/*This is the name of a server*/
 	private String TIME_SERVER = "nist-time-server.eoni.com";
 	
 	public Date getTimeMoment() {
