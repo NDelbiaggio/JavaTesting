@@ -11,21 +11,22 @@ import java.util.TimeZone;
 public class FinnishWatch implements Watch{
 
 	private TimeSource source;
-	private SimpleDateFormat timeFormatter = new SimpleDateFormat("m:s");
+	private SimpleDateFormat timeFormatter = new SimpleDateFormat("H:m:s");
 	private SimpleDateFormat dateFormatter = new SimpleDateFormat("d.M.Y");
-	private TimeZone easternEuropeanTime;
+	private TimeZone easternEuropeanTime ;
 	
-
-	@Override
-	public String getTime() {
-		Date d = new SystemTimeSource().getTimeMoment();
-		return timeFormatter.format(d);
+	public FinnishWatch(TimeSource source){
+		this.source = source;
 	}
 
 	@Override
-	public String getDate() {
-		Date d = new SystemTimeSource().getTimeMoment();				
-		return dateFormatter.format(d);
+	public String getTime() {		
+		return timeFormatter.format(source.getTimeMoment());
+	}
+
+	@Override
+	public String getDate() {				
+		return dateFormatter.format(source.getTimeMoment());
 	}
 
 }

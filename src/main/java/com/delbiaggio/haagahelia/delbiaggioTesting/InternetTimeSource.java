@@ -11,11 +11,11 @@ import org.apache.commons.net.ntp.TimeInfo;
 
 public class InternetTimeSource implements TimeSource {
 
-	private String TIME_SERVER = "time-a.nist.gov";
+	//private String TIME_SERVER = "time-a.nist.gov";
+	private String TIME_SERVER = "nist-time-server.eoni.com";
 	
 	public Date getTimeMoment() {
-		Date time;
-           
+		Date time;          
         NTPUDPClient timeClient = new NTPUDPClient();
         try {
         	InetAddress inetAddress = InetAddress.getByName(TIME_SERVER);
@@ -28,7 +28,4 @@ public class InternetTimeSource implements TimeSource {
 		}
 		return time;
 	}
-
-
-
 }

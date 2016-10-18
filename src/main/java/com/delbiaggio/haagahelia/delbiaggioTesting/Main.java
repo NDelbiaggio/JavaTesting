@@ -2,6 +2,7 @@ package com.delbiaggio.haagahelia.delbiaggioTesting;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,20 +30,34 @@ public class Main extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		response.getWriter().println("<br/>");
-		response.getWriter().println("System Date = " + new SystemTimeSource().getTimeMoment());
-		response.getWriter().println("<br/>");
-		response.getWriter().println("Internet Date = " + new InternetTimeSource().getTimeMoment());	
-		
 		PrintWriter out = response.getWriter();
-		String html = "<meta http-equiv= \"refresh\" content= \"1\" />";
+		String html = "<meta http-equiv= \"refresh\" content= \"4\" />";
 	    out.write(html);
-	    response.getWriter().println("<br/>");
-	    response.getWriter().println("Today date is "+new FinnishWatch().getDate());
-	    response.getWriter().println("<br/>");
-	    response.getWriter().println("Time is "+new FinnishWatch().getTime());
 	    
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		ArrayList<Watch> lstWatches = getWatches();
+		showTimes(lstWatches,response);
+	}
+	
+	private ArrayList<Watch> getWatches(){
+	    ArrayList<Watch> lstWatches = new ArrayList<Watch>();
+	    TimeSource timeSys = new SystemTimeSource();
+	    Watch w1 = new FinnishWatch(timeSys);
+	    lstWatches.add(w1);
+	    TimeSource timeInt = new InternetTimeSource();
+	    Watch w2 = new FinnishWatch(timeInt);
+	    lstWatches.add(w2);
+	    return lstWatches;
+	}
+	
+	private void showTimes(ArrayList<Watch> lstWatches,HttpServletResponse response) throws IOException{
+		for (Watch w:lstWatches) {			
+			response.getWriter().println("<h1>Today date is "+w.getDate()+"</h1>");
+			response.getWriter().println("<br/>");
+			response.getWriter().println("<h2>Time is "+w.getTime()+"</h2>");
+			response.getWriter().println("<br/>");
+			response.getWriter().println("<br/>");
+		}
 	}
 
 	/**
