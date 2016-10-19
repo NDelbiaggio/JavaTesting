@@ -54,11 +54,17 @@ public class Main extends HttpServlet {
 	}
 	
 	private void showTimes(ArrayList<Watch> lstWatches,HttpServletResponse response) throws IOException{
-		for (Watch w:lstWatches) {			
+		for (Watch w:lstWatches) {
+			response.getWriter().println("<br/>");
+			response.getWriter().println("<h1> "+ w.getSource()+"</h1>" );
 			response.getWriter().println("<h1>Today date is "+w.getDate()+"</h1>");
 			response.getWriter().println("<br/>");
 			response.getWriter().println("<h2>Time is "+w.getTime()+"</h2>");
 			response.getWriter().println("<br/>");
+			response.getWriter().println("<h2>The day is "+w.getDay()+"</h2>");
+			response.getWriter().println("<br/>");
+			response.getWriter().println("<br/>");
+			response.getWriter().println("<h2>The day in Finnish "+w.getFinnishDay()+"</h2>");
 			response.getWriter().println("<br/>");
 		}
 	}

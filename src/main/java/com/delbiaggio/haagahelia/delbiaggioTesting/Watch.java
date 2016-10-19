@@ -7,4 +7,7 @@ package com.delbiaggio.haagahelia.delbiaggioTesting;
 public interface Watch {
 	public String getTime();
 	public String getDate();
+	public String getDay();
+	public String getFinnishDay();
+	public String getSource();
 }
