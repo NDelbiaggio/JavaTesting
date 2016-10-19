@@ -37,10 +37,38 @@ public class TestJunit {
 	   public void testDayInFinnish(){
 		   TimeSource mock = new MockTimeSource();
 		   Watch test = new FinnishWatch(mock);	
-		   String expected =  "Keskiviikko";
+		   String expected =  EnumarationDays.mercredi.getFinnish();
 		   String actual = test.getFinnishDay();
 		   assertEquals(actual, expected);		   
 	   }
+	   
+	   @Test
+	   public void testDayInGerman(){
+		   TimeSource mock = new MockTimeSource();
+		   Watch test = new FinnishWatch(mock);	
+		   String expected =  EnumarationDays.mercredi.getGerman();
+		   String actual = test.getGermanDay();
+		   assertEquals(actual, expected);		   
+	   }
+	   
+	   @Test
+	   public void testDayInEnglish(){
+		   TimeSource mock = new MockTimeSource();
+		   Watch test = new FinnishWatch(mock);
+		   String expected =  EnumarationDays.mercredi.getEnglish();
+		   String actual = test.getEnglishDay();
+		   assertEquals(actual, expected);		   
+	   }
+	   
+	   @Test
+	   public void testTodayFinnish(){
+		   TimeSource mock = new SystemTimeSource();
+		   Watch test = new FinnishWatch(mock);
+		   String expected =  EnumarationDays.vendredi.getFinnish();
+		   String actual = test.getFinnishDay();
+		   assertEquals(actual, expected);		   
+	   }
+	   
 	   
 	   
 }

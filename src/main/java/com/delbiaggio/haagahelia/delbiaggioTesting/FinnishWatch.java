@@ -14,7 +14,7 @@ public class FinnishWatch implements Watch{
 	private SimpleDateFormat timeFormatter = new SimpleDateFormat("H:m:s");
 	private SimpleDateFormat dateFormatter = new SimpleDateFormat("d.M.Y");
 	private SimpleDateFormat dayFormatter = new SimpleDateFormat("EEEE");;
-	private TimeZone easternEuropeanTime;
+	private TimeZone easternEuropeanTime;	
 	
 	public FinnishWatch(TimeSource source){
 		this.source = source;
@@ -40,24 +40,18 @@ public class FinnishWatch implements Watch{
 	}
 	
 	public String getFinnishDay(){		
-		switch(this.getDay().toLowerCase()){
-			case "lundi":
-				return "Maanantai";
-			case "mardi":
-				return "Tiistai";
-			case "mercredi":
-				return "Keskiviikko";
-			case "jeudi":
-				return "Torstai";
-			case "vendredi":
-				return "Perjantai";
-			case "samedi":
-				return "Lauantai";
-			case "dimanche":
-				return "Sunnuntai";
-				default: return "Error";
-		}
+		return EnumarationDays.valueOf(this.getDay().toLowerCase()).getFinnish();
 	}
+	
+	public String getEnglishDay(){		
+		return EnumarationDays.valueOf(this.getDay().toLowerCase()).getEnglish();
+	}
+	
+	public String getGermanDay(){
+		return EnumarationDays.valueOf(this.getDay().toLowerCase()).getGerman();
+	}
+	
+	
 	
 
 }

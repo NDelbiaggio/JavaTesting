@@ -9,5 +9,7 @@ public interface Watch {
 	public String getDate();
 	public String getDay();
 	public String getFinnishDay();
+	public String getGermanDay();
+	public String getEnglishDay();
 	public String getSource();
 }
