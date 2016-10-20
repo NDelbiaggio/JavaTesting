@@ -77,16 +77,5 @@ public class FinnishWatch implements Watch{
 		default: return "Error FinnishWatch.getDayForACountry";
 		}
 	}
-	
-	public String getEnglishDay(){		
-		return EnumarationDays.valueOf(this.getDay().toLowerCase()).getEnglish();
-	}
-	
-	public String getGermanDay(){
-		return EnumarationDays.valueOf(this.getDay().toLowerCase()).getGerman();
-	}
-	
-	
-	
 
 }

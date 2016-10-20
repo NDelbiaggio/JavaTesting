@@ -6,7 +6,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import org.apache.taglibs.standard.tag.common.xml.WhenTag;
 import org.junit.Test;
 import org.mockito.Mockito;
 
