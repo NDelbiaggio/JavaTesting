@@ -54,7 +54,7 @@ public class TestJunit {
 		   TimeSource mock = new MockTimeSource();
 		   Watch test = new FinnishWatch(mock);	
 		   String expected =  EnumarationDays.mercredi.getGerman();
-		   String actual = test.getGermanDay();
+		   String actual = test.getDay(Languages.German);
 		   assertEquals(actual, expected);		   
 	   }
 	   
@@ -63,7 +63,7 @@ public class TestJunit {
 		   TimeSource mock = new MockTimeSource();
 		   Watch test = new FinnishWatch(mock);
 		   String expected =  EnumarationDays.mercredi.getEnglish();
-		   String actual = test.getEnglishDay();
+		   String actual = test.getDay(Languages.English);
 		   assertEquals(actual, expected);		   
 	   }
 	   
