@@ -8,8 +8,10 @@ public interface Watch {
 	public String getTime();
 	public String getDate();
 	public String getDay();
-	public String getFinnishDay();
+	public String getDay(Languages l);
+	//public String getFinnishDay();
 	public String getGermanDay();
 	public String getEnglishDay();
 	public String getSource();
+	public int getNumberDayWeek();
 }

@@ -60,9 +60,9 @@ public class Main extends HttpServlet {
 			response.getWriter().println("<h1>Today date is "+w.getDate()+"</h1>");
 			response.getWriter().println("<h2>Time is "+w.getTime()+"</h2>");
 			response.getWriter().println("<h2>The day in French "+w.getDay()+"</h2>");
-			response.getWriter().println("<h2>The day in Finnish "+w.getFinnishDay()+"</h2>");
-			response.getWriter().println("<h2>The day in German "+w.getGermanDay()+"</h2>");
-			response.getWriter().println("<h2>The day in English "+w.getEnglishDay()+"</h2>");
+			response.getWriter().println("<h2>The day in Finnish "+w.getDay(Languages.Finnish)+"</h2>");
+			response.getWriter().println("<h2>The day in German "+w.getDay(Languages.German)+"</h2>");
+			response.getWriter().println("<h2>The day in English "+w.getDay(Languages.English)+"</h2>");
 			response.getWriter().println("<br/>");
 			
 		}
