@@ -8,33 +8,33 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import junit.framework.Assert;
+
 public class MockTimeSourceTest {
 	   
-	private Date date;
+	private Date dateTest;
 	
 	@Before
 	public void init(){
 		Calendar calendar = new GregorianCalendar();
 		calendar.set(2016, 10, 2, 20, 36, 17);
-		date = calendar.getTime();
+		dateTest = calendar.getTime();
 	}
 	
 	@Test
 	public void testGetTimeMoment(){
-		/*// problems to solve about final result..
-		MockTimeSource mts = new MockTimeSource();
-		org.junit.Assert.assertEquals(mts.getTimeMoment(), date);
-		*/
+		// problems to solve about final result..
+		//MockTimeSource mts = new MockTimeSource();		
+		//Assert.assertEquals(mts.getTimeMoment(), dateTest);
+		
 		// Old version
 	   TimeSource mockedTimeSource = Mockito.mock(SystemTimeSource.class);
 	   Watch w = new FinnishWatch(mockedTimeSource);
 	   Calendar calendar = new GregorianCalendar();
 	   calendar.set(2016, 10, 2, 20, 36, 17);		   
 	   Mockito.when(mockedTimeSource.getTimeMoment()).thenReturn(calendar.getTime());
-	   TimeSource mock2 = new MockTimeSource();		   
-	   String expected =  w.getDay();
-	   String actual = new FinnishWatch(mock2).getDay();
-	   org.junit.Assert.assertTrue(actual.equals(expected));
+	   TimeSource mock = new MockTimeSource();		   
+	   org.junit.Assert.assertTrue(w.getDate().equals(new FinnishWatch(mock).getDate()));
 	}
 
 }
