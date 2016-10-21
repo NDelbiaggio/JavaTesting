@@ -47,10 +47,9 @@ public class FinnishWatch implements Watch {
 	 * @param y
 	 */
 	
-	public void setTimeZoneToTimeZoneX(String y) {
-		String x = EnumarrationTimeZones.valueOf(y).getzone();
-		TimeZone zoneX = TimeZone.getTimeZone(x);
-		dayFormatter.setTimeZone(zoneX);
+	public void setTimeZoneToTimeZoneX(EnumarrationTimeZones zone) {
+		TimeZone zoneX = TimeZone.getTimeZone(zone.getzone());
+		timeFormatter.setTimeZone(zoneX);
 	}
 	
 	/**
@@ -58,17 +57,11 @@ public class FinnishWatch implements Watch {
 	 * Uses timeformatter to get the current time with the timezone.
 	 * places the timezone back to it's orignial value ( here easternEuropeanTime)
 	 * @param x
-	 */
-	
+	 */	
 	@Override
-	public String getTimeInTimeZoneX(String x) {
-
-		this.setTimeZoneToTimeZoneX(x);
-		String timeX = timeFormatter.format(source.getTimeMoment());
-		dayFormatter.setTimeZone(easternEuropeanTime);
-		
-		return timeX;
-
+	public String getTimeInTimeZoneX(EnumarrationTimeZones zone) {
+		this.setTimeZoneToTimeZoneX(zone);
+		return this.getTime();		
 	}
 	
 

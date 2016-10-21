@@ -2,6 +2,8 @@ package com.delbiaggio.haagahelia.delbiaggioTesting;
 
 import static org.junit.Assert.*;
 
+import org.junit.Test;
+
 public class TimeZoneTest {
 
 	/**
@@ -15,7 +17,7 @@ public class TimeZoneTest {
 
 		Watch w = new FinnishWatch(ts);
 
-		String expected = w.getTimeInTimeZoneX("two");
+		String expected = w.getTimeInTimeZoneX(EnumarrationTimeZones.two);
 		String actual = w.getTime();
 
 		assertEquals(expected, actual);
@@ -23,15 +25,13 @@ public class TimeZoneTest {
 	}
 	
 	@Test
-	public void testDifferentTimeZone(){
-		
+	public void testDifferentTimeZone(){		
 		TimeSource ts = new SystemTimeSource();
 		Watch w = new FinnishWatch(ts);
-		String expected = w.getTimeInTimeZoneX("zero");
+		String expected = w.getTimeInTimeZoneX(EnumarrationTimeZones.zero);
 		String actual = w.getTime();
-		boolean check = expected.equals(actual);
-		
-		assertFalse("The times are different", check);
+		boolean check = expected.equals(actual);		
+		assertTrue("The times are different", check);
 	}
 
 }
