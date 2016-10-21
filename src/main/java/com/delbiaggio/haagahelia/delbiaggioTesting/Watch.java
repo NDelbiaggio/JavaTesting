@@ -10,5 +10,6 @@ public interface Watch {
 	public String getDay();
 	public String getDay(Languages l);
 	public String getSource();
+	public String getTimeInTimeZoneX(String x);
 	public int getNumberDayWeek();
 }

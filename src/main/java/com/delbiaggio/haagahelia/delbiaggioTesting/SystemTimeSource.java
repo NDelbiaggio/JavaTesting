@@ -8,7 +8,10 @@ import java.util.Date;
 
 public class SystemTimeSource implements TimeSource {
 	public Date getTimeMoment() {
-		return new Date();
+		return new Date().
 	}
-
+	
+	
 }
+
+
