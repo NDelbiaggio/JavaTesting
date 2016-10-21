@@ -1,4 +1,5 @@
 package com.delbiaggio.haagahelia.delbiaggioTesting;
+
 /**
  * @author NicolasDelbiaggio
  * @version 18.10.2016
@@ -7,11 +8,14 @@ package com.delbiaggio.haagahelia.delbiaggioTesting;
 import java.util.Date;
 
 public class SystemTimeSource implements TimeSource {
-	public Date getTimeMoment() {
-		return new Date();
-	}
-	
-	
+
+    /**
+     * Gets the current time from the system.
+     *
+     * @return
+     */
+    public Date getTimeMoment() {
+        return new Date();
+    }
+
 }
-
-

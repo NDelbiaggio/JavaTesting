@@ -14,7 +14,10 @@ public class InternetTimeSource implements TimeSource {
 	//private String TIME_SERVER = "time-a.nist.gov";
 	/*This is the name of a server*/
 	private String TIME_SERVER = "nist-time-server.eoni.com";
-	
+	/**
+         * Method to get the current timezone based on a connection with an ntpudpclient, to take the source. returns in a dateformat.
+         * @return 
+         */
 	public Date getTimeMoment() {
 		Date time;          
         NTPUDPClient timeClient = new NTPUDPClient();

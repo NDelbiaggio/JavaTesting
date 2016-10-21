@@ -1,6 +1,9 @@
 package com.delbiaggio.haagahelia.delbiaggioTesting;
 
 public enum EnumarationDays {
+    /**
+     * translates the french (current system) to a set of languages in an enumeration.
+     */
 	lundi("Maanantai","Montag","Monday"),
 	mardi("Tiistai","Dienstag","Tuesday"),
 	mercredi("Keskiviikko","Mittwoch","Wednesday"),

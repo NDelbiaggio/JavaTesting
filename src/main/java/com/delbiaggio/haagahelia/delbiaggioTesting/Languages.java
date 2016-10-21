@@ -1,6 +1,9 @@
 package com.delbiaggio.haagahelia.delbiaggioTesting;
 
 public enum Languages {
+    /**
+     * Simple enumeration to use the different kind of translations
+     */
 	English("english"),
 	German("german"),
 	Finnish("finnish");

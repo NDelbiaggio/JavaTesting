@@ -38,7 +38,10 @@ public class Main extends HttpServlet {
 		ArrayList<Watch> lstWatches = getWatches();
 		showTimes(lstWatches,response);
 	}
-	
+	/**
+         * Makes an instant of all the different timesources, and places them in a arraylist.
+         * @return 
+         */
 	private ArrayList<Watch> getWatches(){
 	    ArrayList<Watch> lstWatches = new ArrayList<Watch>();
 	    TimeSource time = new SystemTimeSource();
@@ -52,7 +55,12 @@ public class Main extends HttpServlet {
 	    lstWatches.add(w);
 	    return lstWatches;
 	}
-	
+	/**
+         * Shows the time for the different kinds of timesources for each watch.
+         * @param lstWatches
+         * @param response
+         * @throws IOException 
+         */
 	private void showTimes(ArrayList<Watch> lstWatches,HttpServletResponse response) throws IOException{
 		for (Watch w:lstWatches) {
 			response.getWriter().println("<br/>");
