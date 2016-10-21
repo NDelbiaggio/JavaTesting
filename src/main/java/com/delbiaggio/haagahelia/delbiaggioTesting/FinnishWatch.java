@@ -26,19 +26,15 @@ public class FinnishWatch implements Watch {
 		this.source = source;
 	}
 
-	
-        /**
-         * Uses the timeformatter to get the current time based on the timesource.
-         * @return 
-         */
+	public String getSource() {
+		return source.getClass().toString();
+	}
+
 	@Override
 	public String getTime() {
 		return timeFormatter.format(source.getTimeMoment());
 	}
-        /**
-         * Uses the DateFormatter to get the current date based on the timesource.
-         * @return 
-         */
+
 	@Override
 	public String getDate() {
 		return dateFormatter.format(source.getTimeMoment());
@@ -54,6 +50,7 @@ public class FinnishWatch implements Watch {
 	public void setTimeZoneToTimeZoneX(EnumarrationTimeZones zone) {
 		TimeZone zoneX = TimeZone.getTimeZone(zone.getzone());
 		timeFormatter.setTimeZone(zoneX);
+		
 	}
 	
 	/**
@@ -70,27 +67,17 @@ public class FinnishWatch implements Watch {
 		return timeX;		
 	}
 	
-        /**
-         * Uses the dayFormatter to get the current day based on the timesource.
-         * @return 
-         */
+
 	@Override
 	public String getDay() {
 		return dayFormatter.format(source.getTimeMoment());
 	}
-        /**
-         * pastes the integer from the dayNumberFormat based on the timesource.
-         * @return 
-         */
+
 	@Override
 	public int getNumberDayWeek() {
 		return Integer.parseInt(dayNumberFormat.format(source.getTimeMoment()));
 	}
-        /**
-         * Based on the language chosen, gets the translated version of the current day of the week based on .getNumberDayWeek().
-         * @param l
-         * @return 
-         */
+
 	public String getDay(Languages l) {
 		switch (this.getNumberDayWeek()) {
 		case 1:
@@ -113,12 +100,7 @@ public class FinnishWatch implements Watch {
 		// return
 		// EnumarationDays.valueOf(this.getDay().toLowerCase()).getFinnish();
 	}
-        /**
-         * Get the day for the chosen country: based on the chosen day and the chosen language.
-         * @param e
-         * @param l
-         * @return 
-         */
+
 	private String getDayForACountry(EnumarationDays e, Languages l) {
 		switch (l.getLanguage()) {
 		case "english":
@@ -131,13 +113,5 @@ public class FinnishWatch implements Watch {
 			return "Error FinnishWatch.getDayForACountry";
 		}
 	}
-        /**
-         * Gets the name of the current class used for the timesource
-         * @return 
-         */
-    @Override
-    public String getSource() {
-        return this.source.getClass().toString();
-    }
 
 }
