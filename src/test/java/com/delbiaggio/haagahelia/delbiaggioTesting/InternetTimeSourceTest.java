@@ -27,7 +27,9 @@ public class InternetTimeSourceTest {
         	time = new Date(returnTime);
 		}catch(Exception e){}
 	}
-	
+	/**
+         * Test with a mock object to see if the internetconnection is working properly
+         */
 	   @Test()
 	   public void testInternetTime(){
 		   // New version but doesn't work..

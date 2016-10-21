@@ -18,7 +18,9 @@ public class TimeZoneTest {
 		String actual = w.getTime();
 		assertEquals(expected, actual);
 	}
-	
+	/**
+         * Testing if this timezone is different from the GMT zone.
+         */
 	@Test
 	public void testDifferentTimeZone(){		
 		TimeSource ts = new SystemTimeSource();

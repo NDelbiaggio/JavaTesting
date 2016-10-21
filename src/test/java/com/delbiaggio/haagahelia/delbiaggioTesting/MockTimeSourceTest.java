@@ -20,7 +20,9 @@ public class MockTimeSourceTest {
 		calendar.set(2016, 10, 2, 20, 36, 17);
 		dateTest = calendar.getTime();
 	}
-	
+	/**
+         * Uses the mockitoframework to make a mocked timesource  this is used to check if the mock is used properly
+         */
 	@Test
 	public void testGetTimeMoment(){
 		// problems to solve about final result..
