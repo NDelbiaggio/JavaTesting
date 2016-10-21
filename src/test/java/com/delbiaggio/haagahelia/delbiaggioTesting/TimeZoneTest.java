@@ -12,26 +12,21 @@ public class TimeZoneTest {
 
 	@Test
 	public void testCurrentTimezone() {
-
 		TimeSource ts = new SystemTimeSource();
-
 		Watch w = new FinnishWatch(ts);
-
-		String expected = w.getTimeInTimeZoneX(EnumarrationTimeZones.two);
+		String expected = w.getTimeInTimeZoneX(EnumarrationTimeZones.SPtwo);
 		String actual = w.getTime();
-
 		assertEquals(expected, actual);
-
 	}
 	
 	@Test
 	public void testDifferentTimeZone(){		
 		TimeSource ts = new SystemTimeSource();
 		Watch w = new FinnishWatch(ts);
-		String expected = w.getTimeInTimeZoneX(EnumarrationTimeZones.zero);
+		String expected = w.getTimeInTimeZoneX(EnumarrationTimeZones.Szero);
 		String actual = w.getTime();
 		boolean check = expected.equals(actual);		
-		assertTrue("The times are different", check);
+		assertFalse("The times are different", check);
 	}
 
 }

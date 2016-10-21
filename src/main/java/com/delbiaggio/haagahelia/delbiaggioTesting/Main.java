@@ -59,7 +59,7 @@ public class Main extends HttpServlet {
 			response.getWriter().println("<h1> "+ w.getSource()+"</h1>" );
 			response.getWriter().println("<h1>Today date is "+w.getDate()+"</h1>");
 			response.getWriter().println("<h2>Time is "+w.getTime()+"</h2>");
-			response.getWriter().println("<h2>The Time in GMT is "+ w.getTimeInTimeZoneX(EnumarrationTimeZones.one)+"</h2>");
+			response.getWriter().println("<h2>The Time in GMT+0 Summer Time is "+ w.getTimeInTimeZoneX(EnumarrationTimeZones.SPone)+"</h2>");
 			response.getWriter().println("<h2>The day in French "+w.getDay()+"</h2>");
 			response.getWriter().println("<h2>The day in Finnish "+w.getDay(Languages.Finnish)+"</h2>");
 			response.getWriter().println("<h2>The day in German "+w.getDay(Languages.German)+"</h2>");

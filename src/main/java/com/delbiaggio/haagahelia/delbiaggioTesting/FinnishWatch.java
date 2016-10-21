@@ -61,7 +61,9 @@ public class FinnishWatch implements Watch {
 	@Override
 	public String getTimeInTimeZoneX(EnumarrationTimeZones zone) {
 		this.setTimeZoneToTimeZoneX(zone);
-		return this.getTime();		
+		String timeX = this.getTime();
+		timeFormatter.setTimeZone(easternEuropeanTime);
+		return timeX;		
 	}
 	
 
